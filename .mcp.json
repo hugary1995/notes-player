@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "notes-player": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        ".",
+        "notes-player"
+      ],
+      "env": {}
+    }
+  }
+}
