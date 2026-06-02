@@ -5,3 +5,7 @@ __pycache__/
 dist/
 build/
 .DS_Store
+
+# Local MCP registration written by `claude mcp add -s project` during dev.
+# Not shared — students install via `uvx --from git+...` per the README.
+.mcp.json
