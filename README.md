@@ -13,10 +13,12 @@ A tiny educational MCP server for **Claude Code**. It exposes one tool, `play_me
 Then run:
 
 ```bash
-claude mcp add notes-player -- uvx --from git+https://github.com/hugary1995/notes-player notes-player
+claude mcp add notes-player -s user -- uvx --from git+https://github.com/hugary1995/notes-player notes-player
 ```
 
 (Replace `hugary1995` with the GitHub user/org that owns this fork.)
+
+The `-s user` flag registers the server **globally for your user**, so it's available in every directory you launch Claude Code from. Without it, the registration would be scoped to your current directory only — install it once with `-s user` and you're set.
 
 Verify it's wired up:
 
@@ -25,7 +27,7 @@ claude mcp list
 # notes-player: uvx --from git+... notes-player - ✓ Connected
 ```
 
-That's it. `uvx` fetches the repo, builds it in a cached environment, and runs it on demand — no manual `pip install`, no virtualenv to manage.
+That's it. `uvx` fetches the repo on first use, builds it in a cached environment, and runs it on demand — no manual `pip install`, no virtualenv to manage.
 
 ## Try it
 
@@ -66,7 +68,7 @@ uvx --reinstall --from git+https://github.com/hugary1995/notes-player notes-play
 ## Removing
 
 ```bash
-claude mcp remove notes-player
+claude mcp remove notes-player -s user
 ```
 
 ## Development
